@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yhzhang.dota2invokerskills"
+    android:versionCode="3"
+    android:versionName="2.0" >
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"  />
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/portrait"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 	
+		android:hardwareAccelerated="true"  >
+        
+        
+    	<activity
+            android:name="com.yhzhang.dota2invokerskills.Splash"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+		<activity
+            android:name="com.yhzhang.dota2invokerskills.StartMenu"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.MenuAction" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 	
+        
+			
+        <activity
+            android:name="com.yhzhang.dota2invokerskills.InvokerSkillBrowser"        
+            android:label="@string/app_name" >
+          <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.Browser" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+		<activity
+            android:name="com.yhzhang.dota2invokerskills.InvokePractice"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.Prac" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+		<activity
+            android:name="com.yhzhang.dota2invokerskills.TimedInvokePractice"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.TimedPrac" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+        
+		<activity
+            android:name="com.yhzhang.dota2invokerskills.SkillInformation"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.Cold" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+
+		<activity
+            android:name="com.yhzhang.dota2invokerskills.InvokeMenu"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.Chooser" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+ 
+		<activity
+            android:name="com.yhzhang.dota2invokerskills.TimedResult"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.yhzhang.dota2invokerskills.Score" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+
+    </application>
+
+</manifest>
