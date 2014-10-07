@@ -5,8 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
-/*
+/**
  * The splash screen when the app starts
+ * @author yuhaozhang
  */
 public class Splash extends Activity{
 	

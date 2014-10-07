@@ -17,29 +17,31 @@ import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher.ViewFactory;
-/*
+/**
  * The skill invoking quiz
+ * @author yuhaozhang
+ *
  */
 public class TimedInvokePractice extends Activity implements ViewFactory{
 
 	
 	
-		public ImageButton bing;
-		public ImageButton huo;
-		public ImageButton lei;
-		public ImageButton invoke;
-		public ImageView c1;
-		public ImageView c2;
-		public ImageView c3;
-		public ImageView c4;
-		public TextSwitcher t1;
-		public TextView timeLeft;
-		public TextView numRight;
-		public String theSkill = "unset";
-		public String trueSkill; 
-		public ArrayList<Integer> invokeBall;
-		public int rightCount = 0;
-		public int timeRemain = 60000;
+		private ImageButton bing;
+		private ImageButton huo;
+		private ImageButton lei;
+		private ImageButton invoke;
+		private ImageView c1;
+		private ImageView c2;
+		private ImageView c3;
+		private ImageView c4;
+		private TextSwitcher t1;
+		private TextView timeLeft;
+		private TextView numRight;
+		private String theSkill = "unset";
+		private String trueSkill; 
+		private ArrayList<Integer> elements;
+		private int rightCount = 0;
+		private int timeRemain = 60000;
 		private boolean displayResult = true;
 		
 
@@ -154,7 +156,7 @@ public class TimedInvokePractice extends Activity implements ViewFactory{
 			c2.setImageResource(R.drawable.blackbackground);
 			c3.setImageResource(R.drawable.blackbackground);
 			c4.setImageResource(R.drawable.blackbackground);
-			invokeBall = new ArrayList<Integer>();
+			elements = new ArrayList<Integer>();
 	
 	        
 	
@@ -198,50 +200,50 @@ public class TimedInvokePractice extends Activity implements ViewFactory{
 			
 		}
 		
-		public void upDateImage(){
+		private void upDateImage(){
 			int sum = 0;
-			for(int num : invokeBall){
+			for(int num : elements){
 				sum += num;
 			}
-			if(sum == 3 && invokeBall.size() == 3){
+			if(sum == 3 && elements.size() == 3){
 				c4.setImageResource(R.drawable.coldsnap);
 				theSkill = "Cold Snap";			
 			}
-			if(sum == 6 && invokeBall.contains(ice) && invokeBall.size() == 3){
+			if(sum == 6 && elements.contains(ice) && elements.size() == 3){
 				c4.setImageResource(R.drawable.blast);
 				theSkill = "Deafening Blast";
 	
 			}
-			if(sum == 6 && !invokeBall.contains(ice) && invokeBall.size() == 3){
+			if(sum == 6 && !elements.contains(ice) && elements.size() == 3){
 				c4.setImageResource(R.drawable.sunstrike);	
 				theSkill = "Sun Strike";
 			}
 			
-			if(sum == 5 && invokeBall.contains(thunder) && invokeBall.size() == 3){
+			if(sum == 5 && elements.contains(thunder) && elements.size() == 3){
 				c4.setImageResource(R.drawable.ghost);
 				theSkill = "Ghost Walk";
 			}
-			if(sum == 5 && !invokeBall.contains(thunder) && invokeBall.size() == 3){
+			if(sum == 5 && !elements.contains(thunder) && elements.size() == 3){
 				c4.setImageResource(R.drawable.spirit);
 				theSkill = "Forge Spirit";
 			}
-			if(sum == 4 && invokeBall.size() == 3){
+			if(sum == 4 && elements.size() == 3){
 				c4.setImageResource(R.drawable.icewall);
 				theSkill = "Ice Wall";
 			}
-			if(sum == 7 && invokeBall.contains(ice) && invokeBall.size() == 3){
+			if(sum == 7 && elements.contains(ice) && elements.size() == 3){
 				c4.setImageResource(R.drawable.tornado);
 				theSkill = "Tornado";
 			}
-			if(sum == 7 && !invokeBall.contains(ice) && invokeBall.size() == 3){
+			if(sum == 7 && !elements.contains(ice) && elements.size() == 3){
 				c4.setImageResource(R.drawable.metetor);
 				theSkill = "Chaos Meteor";
 			}		
-			if(sum == 9 && invokeBall.size() == 3){
+			if(sum == 9 && elements.size() == 3){
 				c4.setImageResource(R.drawable.emp);
 				theSkill = "EMP";
 			}
-			if(sum == 8 && invokeBall.size() == 3){
+			if(sum == 8 && elements.size() == 3){
 				c4.setImageResource(R.drawable.alacrity);
 				theSkill = "Alacrity";
 			}
@@ -279,18 +281,19 @@ public class TimedInvokePractice extends Activity implements ViewFactory{
 			
 		}
 		
-		public void upDateArray(int toAdd){
-			if(invokeBall.size() < 3){
-				invokeBall.add(toAdd);
+		private void upDateArray(int toAdd){
+			if(elements.size() < 3){
+				elements.add(toAdd);
 			}
 			else{
-				invokeBall.remove(0);
-				invokeBall.add(toAdd);
+				elements.remove(0);
+				elements.add(toAdd);
 			}
 			
 		}
-		public void upDateInput(){
-				for(int i = 0; i < invokeBall.size(); i++){
+		
+		private void upDateInput(){
+				for(int i = 0; i < elements.size(); i++){
 					if(i == 0){
 						upDateHelper(i, c2);
 					}
@@ -302,14 +305,15 @@ public class TimedInvokePractice extends Activity implements ViewFactory{
 					}
 				}
 		}
-		public void upDateHelper(int index, ImageView hisBall){
-			if(invokeBall.get(index) == 1){
+		
+		private void upDateHelper(int index, ImageView hisBall){
+			if(elements.get(index) == 1){
 				hisBall.setImageResource(R.drawable.quas);
 			}
-			if(invokeBall.get(index) == 2){
+			if(elements.get(index) == 2){
 				hisBall.setImageResource(R.drawable.exort);
 			}
-			if(invokeBall.get(index) == 3){
+			if(elements.get(index) == 3){
 				hisBall.setImageResource(R.drawable.wex);
 			}
 			

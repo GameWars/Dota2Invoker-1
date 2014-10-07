@@ -7,8 +7,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-/*
+/**
  * The starting menu of the app
+ * @author yuhaozhang
+ *
  */
 public class StartMenu extends Activity{
 	

@@ -12,8 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-/*
+/**
  * Shows the score records
+ * @author yuhaozhang
+ *
  */
 public class TimedResult extends Activity{
 	
@@ -83,7 +85,6 @@ public class TimedResult extends Activity{
 			int rankNum = 1;
 			do {
 
-				int id = cursor.getInt(DBAdapter.COL_ROWID);
 				int numScore = cursor.getInt(DBAdapter.COL_SCORE);
 				String theDate = cursor.getString(DBAdapter.COL_DATE);
 				
@@ -103,7 +104,7 @@ public class TimedResult extends Activity{
 		cursor.close();
 	}
 	
-	public void DisplayRecords() {
+	private void DisplayRecords() {
 		
 		Cursor cursor = myDb.getAllRows();
 		displayRecordSet(cursor);

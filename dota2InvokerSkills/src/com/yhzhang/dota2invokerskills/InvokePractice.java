@@ -16,15 +16,15 @@ import android.widget.ImageView;
  */
 public class InvokePractice extends Activity{
 	
-	public ImageButton quas;
-	public ImageButton exsort;
-	public ImageButton wex;
-	public ImageButton invoke;
-	public ImageView c1;
-	public ImageView c2;
-	public ImageView c3;
-	public ImageView c4;
-	public ArrayList<Integer> elements;
+	private ImageButton quas;
+	private ImageButton exsort;
+	private ImageButton wex;
+	private ImageButton invoke;
+	private ImageView c1;
+	private ImageView c2;
+	private ImageView c3;
+	private ImageView c4;
+	private ArrayList<Integer> elements;
 	
 	private final int aQuas = 1;
 	private final int aExsort = 2;
@@ -46,7 +46,7 @@ public class InvokePractice extends Activity{
 	}
 	
 	
-	/**
+	/*
 	 * Initialize the references 
 	 */
 	private void initial(){
@@ -107,10 +107,10 @@ public class InvokePractice extends Activity{
 		
 	}
 	
-	/**
+	/*
 	 * Show the skill image in the center based on the elements set
 	 */
-	public void upDateImage(){
+	private void upDateImage(){
 		int sum = 0;
 		for(int num : elements){
 			sum += num;
@@ -156,7 +156,7 @@ public class InvokePractice extends Activity{
 	/*
 	 * Update the skill array 
 	 */
-	public void upDateArray(int toAdd){
+	private void upDateArray(int toAdd){
 		if(elements.size() < 3){
 			elements.add(toAdd);
 		}
@@ -171,7 +171,7 @@ public class InvokePractice extends Activity{
 	/*
 	 * Update the element image based on the button pressed
 	 */
-	public void upDateInput(){
+	private void upDateInput(){
 			for(int i = 0; i < elements.size(); i++){
 				if(i == 0){
 					upDateHelper(i, c2);
@@ -188,7 +188,7 @@ public class InvokePractice extends Activity{
 	/*
 	 * Set the element image on the screen
 	 */
-	public void upDateHelper(int index, ImageView hisBall){
+	private void upDateHelper(int index, ImageView hisBall){
 		if(elements.get(index) == 1){
 			hisBall.setImageResource(R.drawable.quas);
 		}

@@ -11,7 +11,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-/*
+/**
  * The activity that shows the skill information and youtube demo video
  */
 public class SkillInformation extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{

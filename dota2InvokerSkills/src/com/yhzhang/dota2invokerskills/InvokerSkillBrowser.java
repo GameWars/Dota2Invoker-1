@@ -11,7 +11,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
- 
+
+/**
+ * A list to browse the skills
+ * @author yuhaozhang
+ *
+ */
 public class InvokerSkillBrowser extends Activity {
 	private String chosenSkill;
  
@@ -44,7 +49,7 @@ public class InvokerSkillBrowser extends Activity {
     };
  
     /*
-     * Array of image 
+     * Array of images
      */
     int[] imagesArray = new int[]{
         R.drawable.coldsnap,
